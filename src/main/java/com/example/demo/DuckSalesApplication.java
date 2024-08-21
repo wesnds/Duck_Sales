@@ -10,4 +10,5 @@ public class DuckSalesApplication {
 		SpringApplication.run(DuckSalesApplication.class, args);
 	}
 
+
 }
