@@ -35,4 +35,12 @@ public class DuckModel {
     public void setName(String name) {
         this.name = name;
     }
+
+    public double getPrice() {
+        if (this.parentId != null) {
+            return 25;
+        } else {
+            return 50;
+        }
+    }
 }

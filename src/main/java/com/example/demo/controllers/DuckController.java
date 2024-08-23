@@ -41,7 +41,7 @@ public class DuckController {
             Long id
     ){
         ResultObj resultObj = duckService.getDuckById(id);
-        if(resultObj.getStatus().equals("Duck saved")){
+        if(resultObj.getStatus().equals("Duck found. Id: " + id)){
             return ResponseEntity.status(HttpStatus.CREATED).body(resultObj);
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resultObj);

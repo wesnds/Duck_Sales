@@ -3,18 +3,15 @@ package com.example.demo.controllers;
 import com.example.demo.DTOs.CustomerRecordDto;
 import com.example.demo.entities.ResultObj;
 import com.example.demo.models.CustomerModel;
-import com.example.demo.models.DuckModel;
 import com.example.demo.repositories.CustomerRepository;
 import com.example.demo.services.CustomerService;
 import jakarta.validation.Valid;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class CustomerController {

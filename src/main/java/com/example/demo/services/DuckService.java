@@ -50,7 +50,7 @@ public class DuckService {
             return resultObj;
         }
 
-        resultObj.setStatus("Duck saved");
+        resultObj.setStatus("Duck found. Id: " + id);
         resultObj.setObj(duckO);
 
         return resultObj;

@@ -3,6 +3,8 @@ package com.example.demo.models;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="sales")
@@ -10,11 +12,10 @@ public class SalesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    private DuckModel duck;
+    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)
+    private List<DuckModel> ducks;
     @ManyToOne
     private CustomerModel customer;
-    private LocalDate saleDate;
     private double totalPrice;
 
     public Long getId() {
@@ -25,12 +26,15 @@ public class SalesModel {
         this.id = id;
     }
 
-    public DuckModel getDuck() {
-        return duck;
+    public List<DuckModel> getDucks() {
+        return ducks;
     }
 
-    public void setDuck(DuckModel duck) {
-        this.duck = duck;
+    public void setDucks(List<DuckModel> ducks) {
+        this.ducks = ducks;
+    }
+
+    public void setSaleDate(Date saleDate) {
     }
 
     public CustomerModel getCustomer() {

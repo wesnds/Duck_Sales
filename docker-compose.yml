@@ -2,15 +2,13 @@ version: '3.8'
 services:
   postgres:
     image: postgres:13
-    container_name: postgres-container
+    container_name: duck_sales_container
     environment:
-      POSTGRES_DB: ducksales
+      POSTGRES_DB: duck_sales
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./postgres_data:/var/lib/postgresql/data
 
-volumes:
-  postgres_data:
